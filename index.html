@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gitmegit-232 的个人博客</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+               background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+               min-height: 100vh; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .header { text-align: center; color: #fff; padding: 60px 0 40px; }
+        .header h1 { font-size: 36px; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.85; }
+        .card { background: #fff; border-radius: 12px; padding: 30px;
+                margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .card h2 { font-size: 20px; color: #667eea; margin-bottom: 16px;
+                   border-left: 4px solid #764ba2; padding-left: 12px; }
+        .card p { line-height: 1.8; color: #555; }
+        .img-demo { text-align: center; margin: 20px 0; }
+        .img-demo img { max-width: 100%; border-radius: 8px;
+                        box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .img-label { font-size: 13px; color: #999; margin-top: 8px; }
+        .footer { text-align: center; color: rgba(255,255,255,0.7);
+                  padding: 30px 0; font-size: 14px; }
+        a { color: #667eea; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 头部 -->
+    <div class="header">
+        <h1>gitmegit-232</h1>
+        <p>Web 程序设计 · 个人技术博客</p>
+    </div>
+
+    <!-- 关于我 -->
+    <div class="card">
+        <h2>关于我</h2>
+        <p>
+            你好！我是 gitmegit-232，一名计算机专业学生。
+            正在学习 Java Web 开发、Servlet / JSP 技术栈，
+            对全栈开发和云计算方向感兴趣。
+        </p>
+        <p>
+            GitHub: <a href="https://github.com/gitmegit-232" target="_blank">
+                github.com/gitmegit-232</a>
+        </p>
+    </div>
+
+    <!-- 实验要求：图片展示 -->
+    <div class="card">
+        <h2>实验七：图片路径演示</h2>
+
+        <!-- 图1：绝对URL -->
+        <div class="img-demo">
+            <img src="https://gitmegit-232.github.io/MoW.jpg"
+                 alt="绝对URL图片" style="max-height: 400px;">
+            <div class="img-label">
+                ▲ 图 1 — 绝对 URL 方式：
+                <code>https://gitmegit-232.github.io/MoW.jpg</code>
+            </div>
+        </div>
+
+        <!-- 图2：相对路径 -->
+        <div class="img-demo">
+            <img src="R_C .jpg" alt="相对路径图片" style="max-height: 400px;">
+            <div class="img-label">
+                ▲ 图 2 — 相对路径方式：<code>R_C .jpg</code>
+                （与 index.html 在同一目录）
+            </div>
+        </div>
+    </div>
+
+    <!-- 思考题 -->
+    <div class="card">
+        <h2>思考题</h2>
+
+        <p><strong>Q1：网页能否引用本地绝对路径图片（如 d:/images/1.png）？为什么？</strong></p>
+        <p>
+            不能。浏览器运行在安全沙箱中，禁止网页直接访问用户本地文件系统。
+            <code>&lt;img src="d:/images/1.png"&gt;</code> 这种写法浏览器无法加载，
+            因为 file:// 协议和 http:// 协议跨域，且存在安全风险。
+            正确做法是将图片托管到服务器上，通过 URL 或相对路径引用。
+        </p>
+
+        <p style="margin-top: 16px;">
+            <strong>Q2：github.io 是静态托管，如何为博客添加评论功能？</strong>
+        </p>
+        <p>
+            可以通过嵌入第三方评论插件实现，无需自建后端：
+        </p>
+        <ul style="margin-left: 20px; line-height: 2;">
+            <li><strong>utterances</strong> — 基于 GitHub Issues，评论数据存储在仓库 Issues 中，开源免费</li>
+            <li><strong>Gitalk</strong> — 同样基于 GitHub Issues，中文社区使用广泛</li>
+            <li><strong>Disqus</strong> — 老牌评论服务，免费但有广告</li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 gitmegit-232 · Powered by GitHub Pages
+</div>
+
+</body>
+</html>
